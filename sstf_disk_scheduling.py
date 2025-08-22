@@ -10,6 +10,9 @@ def sstf(requests, head):
 
     while pending:
         nearest = min(pending, key=lambda a: abs(current - a))
+        if nearest == current:
+            pending.remove(nearest)
+            continue
 
         total_seek += abs(current - nearest)
         current = nearest
