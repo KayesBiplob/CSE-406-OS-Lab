@@ -2,7 +2,7 @@ requests = [14, 20, 29, 40, 50, 110]
 head = 29
 direction = "right"
 
-def scan(request, head, direction):
+def scan(requests, head, direction):
     requests.sort()
 
     left = [r for r in requests if r<head]
@@ -35,5 +35,6 @@ def scan(request, head, direction):
     return sequence, total_seek
 
 sequence, total_seek = scan(requests, head, direction)
+
 
 print("total seek time:", total_seek)
